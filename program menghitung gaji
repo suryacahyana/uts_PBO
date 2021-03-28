@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+public class tugas {
+    public static void main(String[] args) {
+
+            int jamkerja, golongan,jamlembur = 0;
+            double totalgaji = 0, gajitetap = 0,gajiperjam = 0,gajilembur = 0;
+
+            System.out.println("*******************************\n   MENGHITUNG GAJI KARYAWAN\n*******************************");
+
+
+            Scanner input = new Scanner(System.in);
+            System.out.print("Masukan Nama Anda      : ");
+            String nama = input.nextLine();
+            Scanner input1 = new Scanner (System.in);
+            System.out.print("Masukan golongan Anda     : ");
+            golongan = input1.nextInt();
+            Scanner input2 = new Scanner (System.in);
+            System.out.print("Jumlah jam kerja Anda    : ");
+            jamkerja = input2.nextInt();
+
+
+            if (golongan==1){
+                gajitetap=300000;
+                gajiperjam=5000;
+            }
+            else if (golongan==2){
+                gajitetap=200000;
+                gajiperjam=3000;
+            }
+            else if (golongan==3){
+                gajitetap=150000;
+                gajiperjam=2000;
+            }
+            else if (golongan==4){
+                gajitetap=100000;
+                gajiperjam=1500;
+            }
+            else if (golongan==5){
+                gajitetap=50000;
+                gajiperjam=1000;
+            }
+
+
+            if (jamkerja>10){
+                jamlembur=jamkerja-10;
+                gajilembur=(int) (jamlembur*1.5*gajiperjam);
+            }
+
+            totalgaji=gajitetap+gajilembur;
+
+
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n              RINCIAN GAJI KARYAWAN              \n               Bernama "+nama+"\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            System.out.println("Gaji tetap karyawan adalah Rp. "+gajitetap);
+            System.out.println("Gaji perjamnya      = Rp. "+gajiperjam);
+            System.out.println("Jumlah jam kerjanya = "+jamkerja+" jam");
+            System.out.println("Jumlah jam lembur   = "+jamlembur+" jam");
+            System.out.println("Jumlah Gaji lembur  = Rp. "+gajilembur);
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            System.out.println("TOTAL GAJI KARYAWAN bernama "+nama+" adalah Rp. "+totalgaji);
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        }
+    }
